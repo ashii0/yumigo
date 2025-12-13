@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@600");
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-mono: Roboto Mono, Monospace;
+  --font-lilita: Lilita One, Monospace;
+  --font-macondo: Mancondo, cursive;
+  --font-sirin: Sirin Stencil, sans-serif;
+  --font-caveat: Caveat, cursive;
+
+  --color-akpink: #ffdcdc;
+  --color-akdustypink: #f2c7c1;
+
+  --color-akcream: #fff2eb;
+  --color-aklightercream: #fff3e3;
+  --color-akoffwhitecream: #fff9f2;
+  --color-akcreambeige: #f1e3c6;
+  --color-akbeige: #ffe8cd;
+  --color-akskin: #ffd6ba;
+
+  --color-akdarkbrown-1: #472d2d;
+  --color-akdarkbrown-2: #553939;
+  --color-akdarkbrown-3: #704f4f;
+  --color-akdarkbrown-4: #a77979;
+  --color-akchestnutbrown-5: #8b5e3c;
+
+  --color-aksilver-1: #e5e7eb;
+  --color-aksilver-2: #374151;
+
+  --color-akcharcoal: #141c24;
+  --color-akcharcoal-1: #121920;
+  --color-akmustardyellow: #ffdb58;
+  --color-akwarmsand: #e8d5a9;
+  --color-akpastelpeach: #fbd9b0;
+  --color-aksofttaupe: #d8c8b8;
+  --color-akstrombluetint: #202a35;
+
+  --color-aklightolivebeige-200: #ddd5b5;
+  --color-akolive-800: #556b2f;
+  --color-akvividorange: #f59e0b;
+
+  --color-akmetalicgold: #d4af37;
+  --color-akmetalicgold-2: #d4b77b;
+  --color-aksoftcafegold: #8d6b4f;
+  --color-aksunrisegold: #ffd369;
+  --color-akburnishgold: #c69749;
+
+  --color-akslatebluegray: #2a3540;
+  --color-akdeepslate: #1b242e;
+  --color-aksoftplatinum: #eaeaea;
+  --color-aksofthoneybronze: #d3a06a;
+
+  --color-akprimary-50: #e1e8ef;
+  --color-akprimary-100: #d4dee7;
+  --color-akprimary-200: #b7c7d7;
+  --color-akprimary-300: #99b0c7;
+  --color-akprimary-400: #7c99b6;
+  --color-akprimary-500: #5e82a6;
+  --color-akprimary-600: #4c6b8a;
+  --color-akprimary-700: #3c546c;
+  --color-akprimary-800: #2c3d4f;
+  --color-akprimary-900: #1b2631;
+  --color-akprimary-950: #141c24;
+
+  --color-akaccent-50: #faf5f0;
+  --color-akaccent-100: #f4ece1;
+  --color-akaccent-200: #e8d6bf;
+  --color-akaccent-300: #ddc2a2;
+  --color-akaccent-400: #d2af84;
+  --color-akaccent-500: #c69963;
+  --color-akaccent-600: #b78343;
+  --color-akaccent-700: #926835;
+  --color-akaccent-800: #6c4d28;
+  --color-akaccent-900: #4b351b;
+  --color-akaccent-950: #382814;
+}
+
+body {
+  @apply bg-akcream text-akdarkbrown-3 font-mono;
+}
+
+.dark body {
+  @apply bg-akcharcoal text-akprimary-100;
+}
+
+.spinner {
+  margin: 3.2rem auto 1.6rem;
+  width: 60px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid theme("colors.akprimary.900");
+  border-right-color: theme("colors.akprimary.200");
+  animation: rotate 1s infinite linear;
+}
+
+.spinner-mini {
+  margin: 0;
+  width: 20px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px solid theme("colors.akprimary.200");
+  border-right-color: transparent;
+  animation: rotate 1s infinite linear;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.15s ease-out;
+}
+
+.recharts-custom .recharts-cartesian-grid-horizontal line,
+.recharts-custom .recharts-cartesian-grid-vertical line {
+  stroke: #d1d5db;
+}
