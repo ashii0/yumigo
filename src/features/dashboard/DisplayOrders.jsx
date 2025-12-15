@@ -22,9 +22,9 @@ function DisplayOrders() {
   return (
     <div>
       <ul className="mb-1 p-2 grid grid-cols-[1.5fr_2fr_1.5fr] gap-4 font-bold text-akaccent-600">
-        <li className="border-r-2 flex justify-center">Restaurant</li>
-        <li className="border-r-2 flex justify-center">Delivery By</li>
-        <li className="flex justify-center">Status</li>
+        <li className="border-r-2 flex sm:justify-center">Restaurant</li>
+        <li className="border-r-2 flex sm:justify-center">Delivery By</li>
+        <li className="flex sm:justify-center">Status</li>
       </ul>
 
       <hr />

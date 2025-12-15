@@ -1,4 +1,3 @@
-import { fr } from "date-fns/locale";
 import { PAGE_SIZE } from "../utils/constants";
 import { getToday } from "../utils/helpers";
 import supabase from "./supabase";

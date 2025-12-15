@@ -54,11 +54,11 @@ function Cart() {
           return (
             <div
               key={restaurantId}
-              className="grid grid-cols-[1fr_1fr_1fr_1fr_1fr] border rounded-lg p-4 bg-akoffwhitecream shadow-sm dark:bg-akprimary-900"
+              className="grid sm:grid-cols-[1fr_1fr_1fr_1fr_1fr] sm:gap-0 gap-3 border rounded-lg p-4 sm:m-0 m-3 bg-akoffwhitecream shadow-sm dark:bg-akprimary-900"
             >
               {/* Restaurant Header */}
               <div className="flex justify-center items-center">
-                <h2 className="2xl:text-2xl text-lg md:text-md sm:text-sm font-semibold text-akdarkbrown p-3 sm:p-1">
+                <h2 className="2xl:text-2xl text-lg font-semibold text-akdarkbrown p-3">
                   {restaurantName}
                 </h2>
               </div>

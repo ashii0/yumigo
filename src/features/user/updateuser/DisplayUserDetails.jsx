@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { useUser } from "../login/useUser";
-import Address from "./Address";
-import { useUpdateUser } from "../updateuser/useUpdateUser";
-import FullName from "../updateuser/FullName";
-import Email from "../updateuser/Email";
-import PhoneNumber from "../updateuser/PhoneNumber";
 import Avatar from "../updateuser/Avatar";
+import Email from "../updateuser/Email";
+import FullName from "../updateuser/FullName";
+import PhoneNumber from "../updateuser/PhoneNumber";
+import { useUpdateUser } from "../updateuser/useUpdateUser";
+import Address from "./Address";
 
 function DisplayUserDetails() {
   const {
@@ -54,7 +54,10 @@ function DisplayUserDetails() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="py-2 px-8 flex gap-6 flex-col">
+    <form
+      onSubmit={handleSubmit}
+      className="py-2 sm:px-8 px-6 flex sm:gap-6 gap-4 flex-col"
+    >
       <FullName fullname={fullname} setFullname={setFullname} />
       <Email email={email} />
       <PhoneNumber phone={phone} setPhone={setPhone} />

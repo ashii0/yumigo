@@ -16,7 +16,7 @@ function generateOrderId() {
   return id;
 }
 
-function OrderSummary() {
+function OrderSummary({ onEdit }) {
   const { restaurantId } = useParams();
   const { restaurant } = useRestaurant();
   const { cart, dispatch } = useItem();
@@ -71,6 +71,7 @@ function OrderSummary() {
 
       dispatch({ type: "clearCart", payload: restaurantId });
 
+      onEdit();
       navigate(`/orderconfirmation/${newOrder.ordercode}`, { replace: true });
     } catch (err) {
       console.error(err.message);
@@ -86,7 +87,7 @@ function OrderSummary() {
 
       <h2 className="text-2xl font-bold font-macondo my-4">Items</h2>
 
-      <div className="border p-5 flex flex-col gap-4 py-6 px-8 rounded-lg shadow-xl dark:shadow-sm shadow-akaccent-300">
+      <div className="border sm:p-5 flex flex-col gap-4 py-6 sm:px-8 px-2 rounded-lg shadow-xl dark:shadow-sm shadow-akaccent-300">
         {items.map((item) => (
           <OrderedItems key={item.menuId} item={item} />
         ))}

@@ -4,8 +4,8 @@ import TableReservations from "./TableReservations";
 function TableReservationHistory() {
   return (
     <div className="p-8">
-      <div className="flex justify-between">
-        <h1 className="flex justify-center text-3xl text-akaccent-600 font-bold">
+      <div className="flex flex-col sm:flex-row  justify-between">
+        <h1 className="flex justify-center text-center  text-4xl font-macondo text-akaccent-600 font-bold sm:mb-0 mb-5">
           Table Reservation History
         </h1>
         <SortFilterTableReserveHistory />

@@ -3,7 +3,7 @@ import { GoHistory } from "react-icons/go";
 import { NavLink } from "react-router-dom";
 import useOutsideClick from "../hooks/useOutsideClick";
 
-function HistoryMenu() {
+function HistoryMenu({ onSelect }) {
   const [open, setOpen] = useState(false);
   const close = () => setOpen(false);
   const dropdownRef = useOutsideClick(close);
@@ -11,7 +11,7 @@ function HistoryMenu() {
   return (
     <li className="relative">
       <button
-        onClick={() => setOpen(!open)}
+        onClick={(onSelect, () => setOpen(!open))}
         className="flex items-center gap-1 hover:text-akaccent-600 transition-all"
       >
         <GoHistory />
@@ -27,7 +27,11 @@ function HistoryMenu() {
             <NavLink
               to="/orderhistory"
               className="block px-4 py-2 hover:bg-gray-100 dark:text-akcharcoal transition-all "
-              onClick={() => setOpen(false)}
+              // onClick={(onSelect, () => setOpen(false))}
+              onClick={() => {
+                onSelect();
+                setOpen(false);
+              }}
             >
               Order History
             </NavLink>
@@ -37,7 +41,10 @@ function HistoryMenu() {
             <NavLink
               to="/tablereservationhistory"
               className="block px-4 py-2 hover:bg-gray-100 dark:text-akcharcoal transition-all"
-              onClick={() => setOpen(false)}
+              onClick={() => {
+                onSelect();
+                setOpen(false);
+              }}
             >
               Table Reservation History
             </NavLink>

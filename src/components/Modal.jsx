@@ -36,7 +36,7 @@ function Window({ children, name }) {
   return createPortal(
     <div className="fixed inset-0 w-full h-screen bg-black/40 backdrop-blur-sm z-1000 flex items-center justify-center transition-all-[0.5s]">
       <div
-        className="bg-white dark:bg-akcharcoal p-6 rounded-lg shadow-xl relative max-w-lg w-[90%]"
+        className="bg-white dark:bg-akcharcoal p-6 rounded-lg shadow-xl relative max-w-lg sm:w-[90%] w-[85%]"
         ref={ref}
       >
         <button

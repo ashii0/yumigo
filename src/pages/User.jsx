@@ -26,7 +26,7 @@ function User() {
       )}
 
       <div className="shadow-xl shadow-akaccent-300 dark:shadow-sm mt-5 px-5 py-3">
-        <h2 className="text-2xl font-macondo text-akaccent-600 px-5 py-3 font-bold">
+        <h2 className="sm:text-2xl text-lg font-macondo text-akaccent-600 px-5 py-3 font-bold">
           {/* {user?.user_metadata?.fullname || "Guest"}'s Account Details */}
           {fullname || "Guest"}'s account details
         </h2>

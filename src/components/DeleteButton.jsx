@@ -12,7 +12,7 @@ function DeleteButton({ menuId, restaurantId }) {
           payload: { menuId, restaurantId },
         })
       }
-      className="2xl:text-xl text-lg md:text-md sm:text-sm flex items-center gap-2 sm:gap-1 border-none p-3 md:p-2 sm:p-1 size-fit rounded-full bg-akdarkbrown-3 text-akbeige dark:bg-gray-700 dark:text-akaccent-100 hover:bg-red-500 hover:text-akaccent-300 transition-all"
+      className="2xl:text-xl text-lg md:text-md sm:text-sm flex items-center gap-2 sm:gap-1 border-none sm:p-3 p-1 size-fit rounded-full bg-akdarkbrown-3 text-akbeige dark:bg-gray-700 dark:text-akaccent-100 hover:bg-red-500 hover:text-akaccent-300 transition-all"
     >
       <RiDeleteBin5Line />
       <span>Delete</span>

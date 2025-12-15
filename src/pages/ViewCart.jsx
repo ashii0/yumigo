@@ -32,21 +32,21 @@ function ViewCart() {
       ))}
 
       {items.length > 0 && (
-        <div className="flex justify-between items-center p-4">
-          <h2 className="2xl:text-xl xl:text-lg lg:text-lg md:text-md sm:text-sm">
+        <div className="flex flex-col sm:flex-row justify-between items-center p-4 sm:gap-0 gap-2">
+          <h2 className="2xl:text-xl text-lg font-bold">
             Total before Tax: ${totalCartPrice}
           </h2>
-          <div className="flex gap-3">
+          <div className="flex flex-col sm:flex-row sm:gap-3 gap-5">
             <Link
               to={`/restaurants/${restaurantId}/menus`}
-              className="2xl:text-xl text-lg md:text-md sm:text-sm border-none p-3 md:p-2 sm:p-1 rounded-full bg-akdarkbrown-3 text-akbeige dark:bg-gray-700 dark:text-akaccent-100 hover:bg-akaccent-600 hover:text-akprimary-900 transition-all"
+              className="flex justify-center 2xl:text-xl text-lg md:text-md sm:text-sm border-none sm:p-3 p-1 rounded-full bg-akdarkbrown-3 text-akbeige dark:bg-gray-700 dark:text-akaccent-100 hover:bg-akaccent-600 hover:text-akprimary-900 transition-all"
             >
               View Store
             </Link>
 
             <Link
               to={`/order/${restaurantId}/ordersummary`}
-              className="2xl:text-xl text-lg md:text-md sm:text-sm border-none p-3 md:p-2 sm:p-1 rounded-full bg-akdarkbrown-3 text-akbeige dark:bg-gray-700 dark:text-akaccent-100 hover:bg-akaccent-600 hover:text-akprimary-900 transition-all"
+              className="flex justify-center 2xl:text-xl text-lg border-none sm:p-3 p-1 rounded-full bg-akdarkbrown-3 text-akbeige dark:bg-gray-700 dark:text-akaccent-100 hover:bg-akaccent-600 hover:text-akprimary-900 transition-all"
             >
               Continue to Order Summary
             </Link>

@@ -23,7 +23,7 @@ function Menus() {
             {category}
           </h2>
           <div>
-            <ul>
+            <ul className="grid sm:grid-cols-2">
               {menus.map((menu) => (
                 <MenuList key={menu.id} menu={menu} />
               ))}

@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { useAddress } from "./useAddress";
+import { IoLocationOutline } from "react-icons/io5";
+import { FaLocationArrow } from "react-icons/fa";
 
 function Address({ address, setAddress }) {
   const { address: newAddress, fetchAddress } = useAddress();
@@ -20,7 +22,7 @@ function Address({ address, setAddress }) {
       </label>
       <div className="flex justify-center">
         <input
-          className="grow px-3 py-3 shadow-md border border-akaccent-200 dark:border-akslatebluegray"
+          className="grow sm:p-3 p-0.5 shadow-md border border-akaccent-200 dark:border-akslatebluegray"
           type="text"
           id="address"
           value={address}
@@ -28,12 +30,12 @@ function Address({ address, setAddress }) {
           required
         />
         {/* {error && <p className=" text-red-400">{error}</p>} */}
-        <span className="ml-3 p-1">
+        <span className="sm:ml-3 ml-1 p-1">
           <button
-            className="shadow-md dark:shadow-sm shadow-akaccent-600 ring ring-akaccent-600/35 p-3 text-akaccent-600"
+            className="shadow-md dark:shadow-sm shadow-akaccent-600 ring ring-akaccent-600/35 sm:p-3 p-1 text-akaccent-600"
             onClick={handleClick}
           >
-            Get Position
+            <FaLocationArrow size={24} />
           </button>
         </span>
       </div>

@@ -1,28 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import CreateOrder from "../features/order/CreateOrder";
 import OrderSummary from "../features/order/OrderSummary";
 import EditUser from "../features/user/updateuser/EditUser";
 
 function Order() {
-  const [isOpen, setIsOpen] = useState(() => {
-    const stored = localStorage.getItem("isOpen");
-
-    if (!stored) return false;
-
-    if (stored === "undefined" || stored === "null") return false;
-
-    try {
-      const parsed = JSON.parse(stored);
-
-      return typeof parsed === "boolean" ? parsed : false;
-    } catch {
-      return false;
-    }
-  });
-
-  useEffect(() => {
-    localStorage.setItem("isOpen", JSON.stringify(isOpen));
-  }, [isOpen]);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="p-5">
@@ -32,14 +14,14 @@ function Order() {
         </h1>
         <CreateOrder />
         {!isOpen && (
-          <div className="flex justify-end p-2 my-4 gap-2">
+          <div className="flex flex-col sm:flex-row sm:justify-end sm:p-2 p-1 my-4 sm:gap-2 gap-3 items-center">
             <EditUser />
 
             <button
-              className="p-2 rounded shadow-lg shadow-akaccent-200 bg-akaccent-600 text-aksoftplatinum"
+              className="sm:p-2 p-1 sm:text-base text-sm rounded-lg shadow-lg shadow-akaccent-200 bg-akaccent-600 text-aksoftplatinum"
               onClick={() => {
                 setIsOpen(true);
-                localStorage.setItem("isOpen", true);
+                // localStorage.setItem("isOpen", true);
               }}
             >
               Continue to Order Summary
@@ -47,7 +29,7 @@ function Order() {
           </div>
         )}
 
-        {isOpen && <OrderSummary />}
+        {isOpen && <OrderSummary onEdit={() => setIsOpen(false)} />}
       </div>
     </div>
   );
@@ -66,4 +48,24 @@ export default Order;
 //   });
 //   useEffect(() => {
 //     localStorage.setItem("isOpen", isOpen);
+//   }, [isOpen]);
+
+// useState(() => {
+//     const stored = localStorage.getItem("isOpen");
+
+//     if (!stored) return false;
+
+//     if (stored === "undefined" || stored === "null") return false;
+
+//     try {
+//       const parsed = JSON.parse(stored);
+
+//       return typeof parsed === "boolean" ? parsed : false;
+//     } catch {
+//       return false;
+//     }
+//   });
+
+//   useEffect(() => {
+//     localStorage.setItem("isOpen", JSON.stringify(isOpen));
 //   }, [isOpen]);

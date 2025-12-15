@@ -26,7 +26,7 @@ function Pagination({ count }) {
   if (pageCount <= 1) return null;
 
   return (
-    <div className="flex items-center justify-between font-sirin">
+    <div className="flex flex-col sm:flex-row items-center justify-between font-sirin">
       <p className="text-lg">
         Showing <span>{(currentPage - 1) * PAGE_SIZE + 1}</span> to{" "}
         <span>

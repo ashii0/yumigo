@@ -33,17 +33,21 @@ function MenuList({ menu }) {
   }
 
   return (
-    <div className="grid grid-cols-[1fr_3fr] gap-[4.8rem] sm:gap-8 border border-akaccent-600 dark:border-gray-700 mt-1.5 rounded-lg">
+    <div className="grid sm:grid-cols-[1fr_3fr] sm:gap-[4.8rem] border border-akaccent-600 dark:border-gray-700 mt-1.5 rounded-lg">
       <div className="flex p-1">
-        <img className="aspect-auto object-cover" src={image} alt={id} />
+        <img
+          className="sm:aspect-auto aspect-video object-cover"
+          src={image}
+          alt={id}
+        />
       </div>
 
-      <div className="flex flex-col gap-2 py-2 justify-start">
+      <div className="flex flex-col gap-2 py-2 justify-start sm:px-0 px-2">
         <li className="text-[1.5rem] font-sirin font-bold">{item}</li>
         <li className="italic">{ingredients}</li>
         <li className="text-lg font-sirin text-akaccent-600">${price}</li>
 
-        <div className="flex gap-2">
+        <div className="flex gap-2 mt-auto">
           {itemCount === 0 ? (
             <Button onClick={handleAddCart}>Add to Cart</Button>
           ) : (

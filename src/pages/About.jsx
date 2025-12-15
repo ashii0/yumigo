@@ -1,12 +1,12 @@
 function About() {
   const h1_className =
-    "text-4xl text-center font-bold pb-4 text-akcharcoal/70 dark:text-akaccent-600";
-  const h2_className = "text-2xl font-semibold p-3 text-akaccent-600";
-  const p1_className = "text-xl text-center";
-  const p2_className = "text-xl px-10 pb-2";
+    "sm:text-3xl text-2xl text-center font-bold pb-4 text-akcharcoal/70 dark:text-akaccent-600";
+  const h2_className = "sm:text-2xl font-semibold p-3 text-akaccent-600";
+  const p1_className = "sm:text-xl text-center";
+  const p2_className = "sm:text-xl px-10 pb-2";
   return (
     <div className="">
-      <h1 className="text-5xl font-bold text-center mt-5 font-macondo text-akcharcoal/80 dark:text-akaccent-600">
+      <h1 className="sm:text-4xl text-3xl font-bold text-center mt-5 font-macondo text-akcharcoal/80 dark:text-akaccent-600">
         About us
       </h1>
 
@@ -20,7 +20,7 @@ function About() {
         </p>
       </div>
 
-      <div className="grid grid-cols-2 font-macondo gap-1">
+      <div className="grid sm:grid-cols-2 font-macondo gap-1">
         <div>
           <div className="shadow-2xl mb-1 p-5 bg-linear-to-br from-[#FFE8CD] via-[#F5D2A4] to-[#D4A056]/80 dark:from-[#141C24] dark:via-[#2A3540] dark:to-[#D4A056]/80">
             <h1 className={h1_className}>Our Story</h1>
@@ -33,7 +33,7 @@ function About() {
 
           <div className="shadow-2xl mb-1 p-5 bg-linear-to-br from-[#FFE8CD] via-[#F5D2A4] to-[#D4A056]/80 dark:from-[#141C24] dark:via-[#2A3540] dark:to-[#D4A056]/80">
             <h1 className={h1_className}>Our Philosophy</h1>
-            <p className="text-2xl text-center font-bold p-5">
+            <p className="sm:text-2xl text-lg text-center font-bold p-5">
               Hospitality is an emotion.
             </p>
             <p className={p1_className}>

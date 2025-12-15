@@ -24,20 +24,24 @@ function CartItemCard({ item, cartCount }) {
 
   return (
     <>
-      <div className="border-b bg-akoffwhitecream dark:bg-akcharcoal-1 border-akaccent-600 grid grid-cols-[1fr_2fr_1fr_1fr_1fr] gap-2 sm:gap-1">
+      <div className="border-b bg-akoffwhitecream dark:bg-akcharcoal-1 border-akaccent-600 grid sm:grid-cols-[1fr_2fr_1fr_1fr_1fr] gap-2">
         <div className="flex p-1">
-          <img className="aspect-auto object-cover" src={image} alt={menuId} />
+          <img
+            className="sm:aspect-auto aspect-video object-cover"
+            src={image}
+            alt={menuId}
+          />
         </div>
 
-        <li className="flex justify-center items-center p-5 pl-10 text-sm md:text-md lg:text-lg font-lilita ">
+        <li className="flex justify-center items-center sm:p-5 sm:pl-10 text-lg font-lilita ">
           {itemname}
         </li>
 
-        <li className="flex justify-start items-center text-sm md:text-md lg:text-lg">
+        <li className="flex sm:justify-start justify-center items-center text-lg">
           Price: ${totalPrice}
         </li>
 
-        <li className="flex justify-start items-center">
+        <li className="flex sm:justify-start justify-center items-center sm:mt-0 mt-3">
           <UpdateItemQuantity
             id={menuId}
             restaurantId={restaurantId}
@@ -45,7 +49,7 @@ function CartItemCard({ item, cartCount }) {
           />
         </li>
         {cartCount === 1 ? (
-          <div className="flex justify-start items-center">
+          <div className="flex sm:justify-start justify-center items-center sm:mt-0 mt-3 mb-3">
             <button
               onClick={() => {
                 dispatch({ type: "clearCart", payload: restaurantId });
@@ -59,7 +63,7 @@ function CartItemCard({ item, cartCount }) {
             </button>
           </div>
         ) : (
-          <div className="flex justify-start items-center">
+          <div className="flex sm:justify-start justify-center items-center sm:mt-0 mt-3 mb-3">
             <DeleteButton menuId={menuId} restaurantId={restaurantId} />
           </div>
         )}

@@ -19,8 +19,8 @@ function Restaurants() {
   if (error) return <p>Something went wrong :(</p>;
   return (
     <>
-      <div className="flex justify-between">
-        <h1 className="text-4xl font-macondo font-bold text-akaccent-600">
+      <div className="flex flex-col sm:flex-row sm:justify-between justify-center">
+        <h1 className="text-4xl font-macondo font-bold text-akaccent-600 text-center">
           Restaurants
         </h1>
 
@@ -29,7 +29,7 @@ function Restaurants() {
           placeholder=" 🔍 Search Restaurants..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="items-center border border-akaccent-600 rounded-2xl p-1 w-80 focus:outline-none focus:ring-2 focus:ring-akaccent-500"
+          className="items-center border border-akaccent-600 rounded-2xl p-1 w-80 focus:outline-none focus:ring-2 focus:ring-akaccent-500 mt-5 sm:mt-0"
         />
       </div>
 

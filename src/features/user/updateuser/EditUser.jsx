@@ -6,7 +6,7 @@ function EditUser() {
     <div>
       <Modal>
         <Modal.Open opens="edit-user">
-          <button className="p-2 rounded shadow-xl dark:shadow-sm shadow-akaccent-400 bg-akaccent-600 text-aksoftplatinum">
+          <button className="sm:p-2 p-1 sm:text-base text-sm rounded-lg shadow-xl dark:shadow-sm shadow-akaccent-400 bg-akaccent-600 text-aksoftplatinum">
             Edit Personal Details
           </button>
         </Modal.Open>

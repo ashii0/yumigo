@@ -26,10 +26,11 @@ function MainNav() {
       {/* Mobile dropdown */}
       {isOpen && (
         <ul
-          className="absolute left-0 top-12 bg-white dark:bg-akcharcoal w-full flex flex-col gap-4 p-4 shadow-xl md:hidden z-50 rounded-lg"
+          className="absolute left-0 top-12 bg-white dark:bg-akcharcoal w-40 flex flex-col gap-4 p-4 shadow-xl md:hidden z-50 rounded-lg"
+          // className="absolute left-0 top-12 bg-white dark:bg-akcharcoal w-full flex flex-col gap-4 p-4 shadow-xl md:hidden z-50 rounded-lg"
           ref={dropdownRef}
         >
-          <Navs />
+          <Navs onSelect={close} />
         </ul>
       )}
     </nav>

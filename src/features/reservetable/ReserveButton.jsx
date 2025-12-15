@@ -36,6 +36,7 @@ function ReserveButton() {
       slotId: selectedSlot,
       tableId: selectedTable,
       reservationDate: formattedDate,
+      status: "Active",
       reservationcode,
     });
 

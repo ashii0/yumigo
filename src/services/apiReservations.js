@@ -60,6 +60,7 @@ export async function reserveTable({
   reservationDate,
   userId,
   reservationcode,
+  status,
 }) {
   const { data, error } = await supabase
     .from("tablereservations")
@@ -70,6 +71,7 @@ export async function reserveTable({
         slotid: slotId,
         reservationdate: reservationDate,
         userid: userId,
+        status,
         reservationcode,
       },
     ])
@@ -87,30 +89,44 @@ export async function getReservations(reservationcode) {
   const { data, error } = await supabase
     .from("tablereservations")
     .select(
-      `id, 
-      reservationdate, 
-      reservationcode,
+      `*,
       restaurants:restaurantid(id, name), 
       slots:slotid(id, slotlabel), 
       restauranttables:tableid(id, 
       tablenumber, capacity)`
     )
     .eq("reservationcode", reservationcode)
-    .single();
+    .maybeSingle();
+  // .select(
+  //   `id,
+  //   reservationdate,
+  //   reservationcode,
+  //   status,
+  //   restaurants:restaurantid(id, name),
+  //   slots:slotid(id, slotlabel),
+  //   restauranttables:tableid(id,
+  //   tablenumber, capacity)`
+  // )
 
   if (error) throw error;
 
   return data;
 }
 
+async function syncExpiredReservations() {
+  const { error } = await supabase.rpc("complete_expired_reservations");
+  if (error) throw new Error(error.message);
+}
+
 export async function getAllReservations({ queryDate, sortBy, page }) {
+  await syncExpiredReservations();
   let query = supabase.from("tablereservations").select(
     `id, 
       reservationdate, 
       reservationcode,
       status,
       restaurants:restaurantid(id, name), 
-      slots:slotid(id, slotstart, slotlabel), 
+      slots:slotid(id, slotstart, slotend, slotlabel), 
       restauranttables:tableid(id, 
       tablenumber, capacity)`,
     { count: "exact" }

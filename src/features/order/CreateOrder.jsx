@@ -1,10 +1,10 @@
 import { useUser } from "../user/login/useUser";
 
 const divClassName =
-  "grid grid-cols-[2fr_6fr] xl:grid-cols-[1fr_6fr] 2xl:grid-cols-[1fr_8fr] p-1 rounded-2xl";
+  "grid sm:grid-cols-[2fr_6fr] xl:grid-cols-[1fr_6fr] 2xl:grid-cols-[1fr_8fr] p-1 rounded-2xl";
 const h1ClassName = "text-xl font-macondo px-5 py-1";
 const pClassName =
-  "px-5 py-1 w-full border border-akaccent-400 rounded-2xl sm:shadow-2xl dark:sm:shadow-md";
+  "px-5 py-1 w-full border border-akaccent-400 rounded-2xl sm:shadow-2xl dark:sm:shadow-md sm:text-base text-sm";
 
 function CreateOrder() {
   const { fullname, email, phone, address } = useUser();

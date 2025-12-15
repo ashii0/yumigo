@@ -3,7 +3,7 @@ import SortBy from "../../../components/SortBy";
 
 function SortFilterTableReserveHistory() {
   return (
-    <div className="flex items-center gap-7">
+    <div className="flex flex-col sm:flex-row  items-center gap-7">
       <Filter
         filterField="reservationdate"
         options={[

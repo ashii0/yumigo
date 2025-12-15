@@ -19,7 +19,7 @@ function OrderConfirmation({ ordercodeProp }) {
   return (
     <div className="flex justify-center items-center">
       <div className="w-3xl bg-white text-akcharcoal dark:bg-akslatebluegray/30 dark:text-aksoftplatinum p-6 mt-6">
-        <h1 className="text-akaccent-600 text-3xl items-center font-macondo font-bold">
+        <h1 className="text-3xl items-center font-macondo font-bold sm:text-left text-center">
           {order?.restaurantname}
         </h1>
 

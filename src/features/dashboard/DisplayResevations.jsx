@@ -36,34 +36,30 @@ function DisplayResevations() {
     );
 
   return (
-    <div>
-      <ul className="mb-1 p-2 grid grid-cols-[1.3fr_0.8fr_1fr_0.6fr_0.7fr_1fr] font-bold text-akaccent-600">
+    <div className="">
+      {/* <ul className="mb-1 sm:p-2 p-0.5 grid grid-cols-[1.3fr_0.8fr_1fr_0.6fr_0.7fr_1fr] font-bold text-akaccent-600">
         <li className="border-r-2">Restaurant</li>
         <li className="border-r-2 flex justify-center">Date</li>
         <li className="border-r-2 flex justify-center">Slot</li>
         <li className="border-r-2 flex justify-center">Table#</li>
         <li className="flex justify-center">Capacity</li>
-      </ul>
-      <hr />
+      </ul> */}
+
       {activeTableReservations?.map((reservations) => (
-        <ul
-          key={reservations.id}
-          className="mb-1 p-2 grid grid-cols-[1.3fr_0.8fr_1fr_0.6fr_0.7fr_1fr]"
-        >
-          <li className="border-r-2 p-0.5">{reservations.restaurants.name}</li>
-          <li className="border-r-2 flex justify-center p-0.5">
-            {reservations.reservationdate}
+        <ul key={reservations.id} className="mb-2 border-b sm:p-2 p-0.5">
+          <li className="flex justify-between p-2 items-center">
+            <p className="font-bold">{reservations.restaurants.name}</p>
+            <p>Date: {reservations.reservationdate}</p>
           </li>
-          <li className="border-r-2 flex justify-center p-0.5">
-            {reservations.slots.slotlabel}
+
+          <li className="flex justify-between p-2 items-center">
+            <p>Slot: {reservations.slots.slotlabel}</p>
+            <p>
+              Table# {reservations.restauranttables.tablenumber} (seats:{" "}
+              {reservations.restauranttables.capacity})
+            </p>
           </li>
-          <li className="border-r-2 flex justify-center p-0.5">
-            {reservations.restauranttables.tablenumber}
-          </li>
-          <li className="border-r-2 flex justify-center p-0.5">
-            {reservations.restauranttables.capacity}
-          </li>
-          <li className="flex justify-center p-0.5">
+          <li className="flex justify-end p-2 items-center">
             <button
               disabled={isPending}
               onClick={() => handleClick(reservations.id)}
@@ -72,6 +68,25 @@ function DisplayResevations() {
               Cancel
             </button>
           </li>
+
+          {/* <li className="border-r-2 flex justify-center p-0.5">
+            {reservations.slots.slotlabel}
+          </li>
+          <li className="border-r-2 flex justify-center p-0.5">
+            {reservations.restauranttables.tablenumber}
+          </li>
+          <li className="border-r-2 flex justify-center p-0.5">
+            {reservations.restauranttables.capacity}
+          </li> */}
+          {/* <li className="flex justify-center p-0.5">
+            <button
+              disabled={isPending}
+              onClick={() => handleClick(reservations.id)}
+              className="border bg-akaccent-600 text-aksoftplatinum border-akaccent-500 rounded-lg p-1"
+            >
+              Cancel
+            </button>
+          </li> */}
         </ul>
       ))}
     </div>
@@ -79,3 +94,33 @@ function DisplayResevations() {
 }
 
 export default DisplayResevations;
+
+// {activeTableReservations?.map((reservations) => (
+//         <ul
+//           key={reservations.id}
+//           className="mb-1 sm:p-2 p-0.5 grid sm:grid-cols-[1.3fr_0.8fr_1fr_0.6fr_0.7fr_1fr]"
+//         >
+//           <li className="border-r-2 p-0.5">{reservations.restaurants.name}</li>
+//           <li className="border-r-2 flex justify-center p-0.5">
+//             {reservations.reservationdate}
+//           </li>
+//           <li className="border-r-2 flex justify-center p-0.5">
+//             {reservations.slots.slotlabel}
+//           </li>
+//           <li className="border-r-2 flex justify-center p-0.5">
+//             {reservations.restauranttables.tablenumber}
+//           </li>
+//           <li className="border-r-2 flex justify-center p-0.5">
+//             {reservations.restauranttables.capacity}
+//           </li>
+//           <li className="flex justify-center p-0.5">
+//             <button
+//               disabled={isPending}
+//               onClick={() => handleClick(reservations.id)}
+//               className="border bg-akaccent-600 text-aksoftplatinum border-akaccent-500 rounded-lg p-1"
+//             >
+//               Cancel
+//             </button>
+//           </li>
+//         </ul>
+//       ))}

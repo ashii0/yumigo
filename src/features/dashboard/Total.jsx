@@ -9,10 +9,10 @@ function Total() {
   const { count: reservationCount } = useReservationsForChart();
   return (
     // border border-akaccent-200 shadow-sm rounded-sm flex p-1.5 gap-1
-    <div className="flex gap-5 text-base">
+    <div className="flex gap-5 sm:text-base">
       <div className="grid grid-cols-[auto_auto] shadow-sm border border-akaccent-200 dark:border-gray-500 rounded-sm gap-2 p-1">
         {/* <HiOutlineBriefcase size={60} /> */}
-        <IoFastFoodOutline size={45} />
+        <IoFastFoodOutline className="text-[28px] sm:text[45px]" />
 
         <p className="flex flex-col">
           <span>Orders</span>
@@ -20,8 +20,8 @@ function Total() {
         </p>
       </div>
 
-      <div className="grid grid-cols-[auto_auto] shadow-sm border border-akaccent-200 dark:border-gray-500 rounded-sm gap-2 p-1">
-        <MdOutlineTableRestaurant size={45} />
+      <div className="grid grid-cols-[auto_auto] shadow-sm border border-akaccent-200 dark:border-gray-500 rounded-sm gap-1 sm:gap-2 p-0.5 sm:p-1">
+        <MdOutlineTableRestaurant className="text-[28px] sm:text[45px]" />
 
         <p className="flex flex-col">
           <span>Reservations</span>

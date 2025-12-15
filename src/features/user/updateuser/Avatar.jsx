@@ -11,7 +11,7 @@ function Avatar({ setAvatar, isUpdating }) {
         accept="image/*"
         onChange={(e) => setAvatar(e.target.files[0])}
         disabled={isUpdating}
-        className="file:px-5 file:py-3 file:border file:border-akaccent-600/35 file:text-akaccent-600 file:shadow-md file:shadow-akaccent-600 file:mx-5 "
+        className="sm:file:px-5 file:px-2 file:py-3 file:border file:border-akaccent-600/35 file:text-akaccent-600 file:shadow-md file:shadow-akaccent-600 sm:file:mx-5 file:mx-1"
       />
     </div>
   );

@@ -12,7 +12,7 @@ function Filter({ filterField, options }) {
     setSearchParams(searchParams);
   }
   return (
-    <div className="border border-akaccent-200 shadow-sm dark:border-gray-500 rounded-sm flex p-1.5 gap-1">
+    <div className="border border-akaccent-200 shadow-sm dark:border-gray-500 rounded-sm flex p-0.5 sm:p-1 gap-1">
       {options.map((option) => (
         <button
           className={`shadow-sm rounded-sm px-1 py-1 transition-all-[0.3s] enabled:hover:bg-akaccent-500 enabled:hover:text-aksoftplatinum ${
