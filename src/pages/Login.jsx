@@ -1,18 +1,20 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import LoginForm from "../features/user/login/LoginForm";
 import { useUser } from "../features/user/login/useUser";
-import { useEffect } from "react";
 import Spinner from "../components/Spinner";
 
 function Login() {
   const { user, isLoading } = useUser();
-  const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!isLoading && user) navigate("/dashboard", { replace: true });
-  }, [navigate, user, isLoading]);
+  // useEffect(() => {
+  //   if (!isLoading && user) navigate("/dashboard", { replace: true });
+  // }, [navigate, user, isLoading]);
 
   if (isLoading) return <Spinner />;
+
+  if (user) {
+    return <Navigate to="/dashboard" replace />;
+  }
 
   return (
     <div className="flex justify-center mt-30">
