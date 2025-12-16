@@ -20,7 +20,7 @@ function MainNav() {
 
       {/* Menu on Large screens */}
       <ul className="hidden md:flex flex-row gap-7 ">
-        <Navs />
+        <Navs onSelect={close} />
       </ul>
 
       {/* Mobile dropdown */}
