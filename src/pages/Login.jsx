@@ -1,10 +1,11 @@
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import LoginForm from "../features/user/login/LoginForm";
 import { useUser } from "../features/user/login/useUser";
 import Spinner from "../components/Spinner";
 
 function Login() {
   const { user, isLoading } = useUser();
+  const navigate = useNavigate();
 
   // useEffect(() => {
   //   if (!isLoading && user) navigate("/dashboard", { replace: true });
@@ -13,7 +14,8 @@ function Login() {
   if (isLoading) return <Spinner />;
 
   if (user) {
-    return <Navigate to="/dashboard" replace />;
+    return navigate("/dashboard", { replace: true });
+    // return <Navigate to="/dashboard" replace />;
   }
 
   return (
