@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import LoginForm from "../features/user/login/LoginForm";
 import { useUser } from "../features/user/login/useUser";
 import Spinner from "../components/Spinner";
