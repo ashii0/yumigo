@@ -31,7 +31,7 @@ export async function login({ email, password }) {
     throw new Error(error.message);
   }
 
-  return data, error;
+  return data;
 }
 
 //GET CURRENT USER WITH SESSION [Session creates when email verification is on]

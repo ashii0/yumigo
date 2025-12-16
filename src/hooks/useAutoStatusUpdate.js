@@ -19,9 +19,9 @@ function useAutoStatusUpdate() {
         if (!newStatus) return;
 
         if (order.status !== newStatus) {
-          console.log(
-            `Updating ${order.ordercode}:${order.status} -> ${newStatus}`
-          );
+          // console.log(
+          //   `Updating ${order.ordercode}:${order.status} -> ${newStatus}`
+          // );
           mutateStatus({
             id: order.id,
             status: newStatus,

@@ -11,7 +11,7 @@ function HistoryMenu({ onSelect }) {
   return (
     <li className="relative">
       <button
-        onClick={(onSelect, () => setOpen(!open))}
+        onClick={() => setOpen(!open)}
         className="flex items-center gap-1 hover:text-akaccent-600 transition-all"
       >
         <GoHistory />
@@ -56,15 +56,3 @@ function HistoryMenu({ onSelect }) {
 }
 
 export default HistoryMenu;
-
-{
-  /* const navLink_ClassName =
-    "flex items-center gap-1 hover:text-akaccent-600 transition-all";
-    
-    <li>
-  <NavLink className={navLink_ClassName} to="/cart">
-    <GoHistory />
-    <span>History</span>
-  </NavLink>
-</li>; */
-}

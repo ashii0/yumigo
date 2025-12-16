@@ -1,7 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LoginForm from "../features/user/login/LoginForm";
+import { useUser } from "../features/user/login/useUser";
+import { useEffect } from "react";
+import Spinner from "../components/Spinner";
 
 function Login() {
+  const { user, isLoading } = useUser();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!isLoading && user) navigate("/dashboard", { replace: true });
+  }, [navigate, user, isLoading]);
+
+  if (isLoading) return <Spinner />;
+
   return (
     <div className="flex justify-center mt-30">
       <div className="w-full rounded-lg max-w-md p-5 bg-white dark:bg-akslatebluegray">
