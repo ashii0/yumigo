@@ -13,7 +13,6 @@ export function useUser() {
     isLoading,
     user,
     ...metadata,
-    isAuthenticated: user?.role === "authenticated",
   };
 }
 
@@ -22,3 +21,4 @@ export function useUser() {
 //   user,
 //   isAuthenticated: !!user,
 // };
+// isAuthenticated: user?.role === "authenticated",

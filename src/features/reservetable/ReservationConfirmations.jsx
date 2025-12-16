@@ -5,15 +5,14 @@ import useUserReservation from "./useUserReservation";
 
 function ReservationConfirmations({ reservationcodeProps }) {
   useBlockNavigation();
-  console.log("Props", reservationcodeProps);
+
   const { reservationcode: reservationcodeFromURL } = useParams();
-  console.log(reservationcodeFromURL);
   const reservationcode = reservationcodeProps || reservationcodeFromURL;
 
   const { data: reservations, isPending } = useUserReservation(reservationcode);
   if (isPending || !reservationcode) return <Spinner />;
 
-  if (!reservations) return null;
+  //if (!reservations) return null;
   const { reservationdate, restaurants, restauranttables, slots } =
     reservations || {};
 
